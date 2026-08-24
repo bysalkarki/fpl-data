@@ -1,0 +1,6 @@
+{
+  "name": "FPL World Top 20 & Squad Intelligence",
+  "description": "Track the top 20 Fantasy Premier League managers in the world, inspect their active squads, captaincy picks, player form trends, and get AI tactical edge recommendations to perfect your team.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: #020408;
+  color: #e2e8f0;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+}
+
+/* Custom glowing effects from Immersive UI design */
+.neon-glow-green {
+  box-shadow: 0 0 15px rgba(0, 255, 133, 0.35);
+}
+
+.neon-glow-plum {
+  box-shadow: 0 0 20px rgba(56, 0, 60, 0.5);
+}
