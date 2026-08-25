@@ -47,14 +47,14 @@ export default function App() {
     value: number;
     picks: ManagerPick[];
   }>({
-    id: 118492,
-    player_name: 'FPL Challenger',
-    name: 'Challenger FC',
-    overall_points: 1640,
-    overall_rank: 45210,
-    event_total: 78,
-    bank: 15,
-    value: 1035,
+    id: 120245,
+    player_name: 'Dull Menate',
+    name: 'LOCKER DOOR',
+    overall_points: 131,
+    overall_rank: 1,
+    event_total: 131,
+    bank: 0,
+    value: 1000,
     picks: [],
   });
 
@@ -63,7 +63,7 @@ export default function App() {
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [isLoadingScout, setIsLoadingScout] = useState(false);
   const [isLoadingTeam, setIsLoadingTeam] = useState(false);
-  const [gameweek, setGameweek] = useState<number>(26);
+  const [gameweek, setGameweek] = useState<number>(1);
 
   // Initial Data Bootstrap
   useEffect(() => {
@@ -82,7 +82,7 @@ export default function App() {
       // 2. Fetch Top 20 & Consensus
       const top20Res = await fetch('/api/fpl/top20');
       const top20Data = await top20Res.json();
-      if (top20Data.managers) {
+      if (top20Data.managers && top20Data.managers.length > 0) {
         setManagers(top20Data.managers);
         setSelectedManager(top20Data.managers[0]);
       }
@@ -94,7 +94,8 @@ export default function App() {
       }
 
       // 3. Fetch default user team
-      await loadUserTeam('118492');
+      const initialTeamId = top20Data?.managers?.[0]?.entry_id ? String(top20Data.managers[0].entry_id) : '120245';
+      await loadUserTeam(initialTeamId);
 
       // 4. Initial AI Scout Briefing
       fetchScoutBriefing();

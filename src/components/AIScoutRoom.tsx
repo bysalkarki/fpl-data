@@ -18,9 +18,9 @@ export const AIScoutRoom: React.FC<AIScoutRoomProps> = ({
   const [question, setQuestion] = useState('');
 
   const quickPrompts = [
-    'Who is the highest ceiling captain pick for GW 26?',
+    'Who is the highest ceiling captain pick for this gameweek?',
     'Find me 3 underpriced defenders with clean sheet potential under £5.0m',
-    'Should I sell Haaland to fund Salah + Palmer double premium?',
+    'How should I structure my midfield vs the Top 20 template?',
     'What is the optimal chip strategy for upcoming double gameweeks?',
   ];
 
